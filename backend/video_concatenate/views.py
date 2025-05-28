@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from .permissions import CanConcatenateVideos  # Import the permission class
 from moviepy import VideoFileClip, concatenate_videoclips
 
 class ConcatenateVideosAPIView(APIView):
@@ -22,3 +23,6 @@ class ConcatenateVideosAPIView(APIView):
         final_clip.write_videofile("final_video.mp4", codec="libx264", fps=24)
         
         return Response({"message": "Videos successfully concatenated."}, status=200)
+
+
+

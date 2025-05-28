@@ -37,8 +37,8 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('concatenate/', include('video_concatenate.urls')),
-    # path('qrcode/', include('video_qrcode_maker.urls')),
-    # path('caption/', include('video_caption.urls')),
+    path('qrcode/', include('video_qrcode_maker.urls')),
+    path('caption/', include('video_caption.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0),
          name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0),
